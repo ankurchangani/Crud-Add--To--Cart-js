@@ -4,8 +4,16 @@ let ratingInput = document.getElementById('rating');
 let catagoryInput = document.getElementById('catagory');
 let proDetailsInput = document.getElementById('proDetails');
 let proReviewInput = document.getElementById('proReview');
-// let carts = document.getElementById("carts");
-// let addshow = document.getElementById('addShow');
+// err- genartor
+
+let errname = document.getElementById('errname');
+let errprice = document.getElementById('errprice');
+let errRating = document.getElementById('errRating');
+let errCategory = document.getElementById('errCategory');
+let errDitails = document.getElementById('errDitails');
+let errReview = document.getElementById('errReview');
+
+// view
 let tbody = document.getElementById('View');
 
 let isedit = false;
@@ -60,7 +68,41 @@ const addData = () => {
             proDetails: proDetailsInput.value,
             proReview: proReviewInput.value,
         };
+        if (fnameInput.value === "") {
+            errname.innerHTML = "Full name is required";
+        } else {
+            errname.innerHTML = "";
+        }
 
+        if (priceInput.value === "") {
+            errprice.innerHTML = "Please enter the Price";
+        } else {
+            errprice.innerHTML = "";
+        }
+
+        if (ratingInput.value === "") {
+            errRating.innerHTML = "Please enter The Rating";
+        } else {
+            errRating.innerHTML = "";
+        }
+
+        if (catagoryInput.value === "") {
+            errCategory.innerHTML = "Please enter The Category";
+        } else {
+            errCategory.innerHTML = "";
+        }
+
+        if (proDetailsInput.value === "") {
+            errDitails.innerHTML = "Please enter the Product Details";
+        } else {
+            errDitails.innerHTML = "";
+        }
+
+        if (proReviewInput.value === "") {
+            errReview.innerHTML = "Please enter the Product Review";
+        } else {
+            errReview.innerHTML = "";
+        }
         adds = [...adds, obj];
     }
 
@@ -78,19 +120,18 @@ const addData = () => {
     return false;
 };
 // edit data
-
 const singleRec = (id) => {
     let data = [...adds];
 
     let singleRec = data.filter((d) => {
         return d.id === id;
     });
-    fname.value = singleRec[0].fname;
-    price.value = singleRec[0].price;
-    rating.value = singleRec[0].rating;
-    catagory.value = singleRec[0].catagory;
-    proDetails.value = singleRec[0].proDetails;
-    proReview.value = singleRec[0].proReview;
+    fnameInput.value = singleRec[0].fname;
+    priceInput.value = singleRec[0].price;
+    ratingInput.value = singleRec[0].rating;
+    catagoryInput.value = singleRec[0].catagory;
+    proDetailsInput.value = singleRec[0].proDetails;
+    proReviewInput.value = singleRec[0].proReview;
     isedit = true;
     isindex = id;
 };
@@ -107,7 +148,7 @@ const deleteData = (id) => {
 
     adds = deletdeta;
     dataDisplay();
-};      
+};
 
 //get cart
 const getCart = () => {

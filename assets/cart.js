@@ -23,7 +23,7 @@ const viewCart = () => {
                                     <td>${product.fname}</td>
                                     <td>${product.price}</td>
                                     <td>${product.rating}</td>
-                                    <td>${product. catagory}</td>
+                                    <td>${product.catagory}</td>
                                     <td>${product.proDetails}</td>
                                     <td>${product.proReview}</td>
                                     <td>
@@ -38,5 +38,7 @@ const viewCart = () => {
         });
     }
 };
+
+
 
 viewCart();

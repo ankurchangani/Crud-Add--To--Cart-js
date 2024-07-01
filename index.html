@@ -20,28 +20,6 @@
 </head>
 
 <body>
-  <!-- offcanvs -->
-  <!-- <div class="offcanvas offcanvas-end" style="width: 600px;" data-bs-scroll="true" data-bs-backdrop="false"
-  tabindex="-1" id="displyCart" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header bg-danger">
-      <h5 class="offcanvas-title fs-1 mt-3 mx-auto" id="offcanvasScrollingLabel">ADD TO CART</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body bg-body-secondary">
-      <table class="table">
-          <thead>
-              <tr>
-                  <th scope="col">#ID</th>
-                  <th scope="col">Product Name</th>
-                  <th scope="col">Prize</th>
-                  <th scope="col">rating</th>
-              </tr>
-          </thead>
-          <tbody id="addShow">
-          </tbody>
-      </table>
-  </div>
-</div> -->
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
@@ -77,13 +55,14 @@
             </li>
           </ul>
           <a href="cart.html" class="position-relative">
-            <button type="button" class="btn btn-primary " >
-              <i class="bi bi-bag-dash-fill"  ></i>
+            <button type="button" class="btn btn-primary ">
+              <i class="bi bi-bag-dash-fill"></i>
 
-             <div class="" >
-              <span class="bg-danger rounded-circle text-center position-absolute top-0 start-100 translate-middle" 
-              style="width: 22px; height: 22px; display: inline-block; font-size: 12px; "  id="carts" onclick="return viewCart()"  ></span>
-             </div>
+              <div class="">
+                <span class="bg-danger rounded-circle text-center position-absolute top-0 start-100 translate-middle"
+                  style="width: 22px; height: 22px; display: inline-block; font-size: 12px; " id="carts"
+                  onclick="return viewCart()"></span>
+              </div>
             </button>
           </a>
         </div>
@@ -110,13 +89,15 @@
         <input type="number" class="form-control" id="price" placeholder="Product Price"
           style="outline: none; border: none;">
 
-        <p id="errname" class=" fs-6 mt-1" style="color: red;"></p>
+        <p id="errprice" class=" fs-6 mt-1" style="color: red;"></p>
       </div>
 
 
       <div class="col-md-12">
         <label for="rating" class="form-label">Ratings</label>
         <input type="text" class="form-control" id="rating" placeholder="rating" style="outline: none; border: none;">
+
+        <p id="errRating" class="fs-6 mt-1" style="color: red;"></p>
 
       </div>
 
@@ -125,18 +106,21 @@
         <input type="text" class="form-control" placeholder="Product- catagory" id="catagory"
           style="outline: none; border: none;">
 
+        <p id="errCategory" class="fs-6 mt-1" style="color: red;"></p>
+
       </div>
 
       <div class="col-md-12">
         <label for="ditails" class="form-label">Product Ditails</label>
         <textarea type="password" class="form-control" id="proDetails" style="outline: none; border: none;"></textarea>
-        <p id="pErr" class="err"></p>
+        <p id="errDitails" class="fs-6 mt-1" style="color: red;"></p>
 
       </div>
 
       <div class="col-md-12">
         <label for="review" class="form-label">Product Review</label>
         <textarea type="text" class="form-control" id="proReview"></textarea>
+        <p id="errReview" class="fs-6 mt-1" style="color: red;"></p>
 
       </div>
       <div class="col-12">
@@ -154,13 +138,13 @@
   <div class="container mt-5" style="background: #f3f6fd;
     padding: 25px 20px;">
     <table class="table">
-      <thead >
+      <thead>
         <tr>
           <th scope="">#</th>
           <th scope="">Product name</th>
           <th scope="">Product Price</th>
           <th scope="">Ratings</th>
-          <th scope="">Product Category</th>  
+          <th scope="">Product Category</th>
           <th scope="">Product Ditails</th>
           <th scope="">Product Review</th>
           <th scope="">Action</th>
@@ -173,7 +157,7 @@
   </div>
 
 
-  
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
