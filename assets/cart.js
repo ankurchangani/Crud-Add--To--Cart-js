@@ -32,13 +32,33 @@ const viewCart = () => {
                                         <button class="btn btn-outline-info p-2">-</button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-outline-danger p-2"><i class="bi bi-trash3-fill"></i></button>
+                                    <button class="btn btn-outline-danger p-2" onclick="productdelete(${product.id})">
+                                    <i class="bi bi-trash3-fill"></i>
+                                </button>
+    
                                     </td>
                                    </tr>`;
         });
     }
 };
 
+
+//  productdelete
+
+const productdelete = (id) => {
+    console.log("productdelete")
+
+    Cart = [...Cart];
+
+    let deletdeta = Cart.filter((delid) => {
+        return delid.id !== id;
+    });
+
+    localStorage.setItem("product-item", JSON.stringify(deletdeta));
+    Cart = getCart();
+
+    viewCart();
+};
 
 
 viewCart();

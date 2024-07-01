@@ -144,7 +144,7 @@ const deleteData = (id) => {
     let deletdeta = data.filter((del) => {
         return del.id !== id;
     });
-    localStorage.setItem('studentsdata', JSON.stringify(deletdeta));
+    localStorage.setItem('productDetails', JSON.stringify(deletdeta));
 
     adds = deletdeta;
     dataDisplay();
