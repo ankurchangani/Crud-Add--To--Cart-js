@@ -198,14 +198,14 @@ const dataDisplay = () => {
             <td>${rec.proDetails}</td>
             <td>${rec.proReview}</td>           
             <td>
-                <button type="button" class="btn btn-primary" onclick="singleRec(${rec.id})">Edit</button>
-                <button type="button" class="btn btn-danger" onclick="deleteData(${rec.id})">Delete</button>
+                <button type="button" class="btn btn-primary" onclick="singleRec(${rec.id})"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" class="btn btn-danger" onclick="deleteData(${rec.id})"><i class="bi bi-trash-fill"></i></button>
 
              
             </td>
 
             <td>
-                    <button type="button" class="btn btn-primary mx-2" onclick=" return seletedproduct(${rec.id})">Add</button> 
+                    <button type="button" class="btn btn-primary mx-2" onclick=" return seletedproduct(${rec.id})"><i class="bi bi-plus-square"></i></button> 
             </td>
         </tr>`;
     });
