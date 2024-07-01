@@ -6,7 +6,7 @@ let addshow = document.getElementById('cart-view-show');
 const getCart = () => {
     let cartData = JSON.parse(localStorage.getItem('product-item'));
     if (cartData) {
-     
+        // Initialize quantity property if it's missing
         cartData = cartData.map(product => ({
             ...product,
             quantity: product.quantity || 1 
