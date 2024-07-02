@@ -51,7 +51,7 @@ const viewCart = () => {
                                 <td colspan="2">${calculateTotalPrice()}</td>
                                 </tr>`;
                             } else {
-                                addshow.innerHTML = "<tr><td colspan='10' class='text-center'>Cart is empty</td></tr>";
+                                addshow.innerHTML = "<tr><td colspan='10' class='text-center'>Cart is Empty</td></tr>";
     }
 };
 
