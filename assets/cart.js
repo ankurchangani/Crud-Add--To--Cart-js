@@ -31,7 +31,7 @@ const viewCart = () => {
                                     <td>${product.rating}</td>
                                     <td>${product.catagory}</td>
                                     <td>${product.proDetails}</td>
-                                    <td>${product.proReview}</td>
+                                    <td>${product.proReview}</td> 
                                     <td>
                                     <button class="btn btn-outline-success p-2" onclick="increaseQuantity(${product.id})">+</button>
                                     <span class="text-warning mx-2">${product.quantity}</span>
@@ -54,6 +54,8 @@ const viewCart = () => {
                                 addshow.innerHTML = "<tr><td colspan='10' class='text-center'>Cart is Empty</td></tr>";
     }
 };
+
+
 
 
 
