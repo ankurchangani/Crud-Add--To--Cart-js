@@ -171,18 +171,27 @@ let Storage = getData();
 
 // selectProduct
 const seletedproduct = (id) => {
-
     let data = [...adds];
 
-    let addCart = data.filter((p) => {
-        return p.id == id;
-    })
+    let addCart = data.find((p) => p.id === id);
 
-    console.log("add cart", addCart[0]);
-    Cart = [...Cart, addCart[0]];
-    localStorage.setItem('product-item', JSON.stringify(Cart));
+    if (!addCart) {
+        console.error(`Product with ID ${id} not found.`);
+        return;
+    }
+
+    let existingItem = Cart.find((item) => item.id === addCart.id);
+
+    if (existingItem) {
+        existingItem.qty += 1;
+    } else {
+        addCart.qty = 1;
+        Cart.push(addCart);
+    }
+
+    localStorage.setItem('product-item', JSON.stringify(Cart)); // Update localStorage
     addCount();
-}
+};
 
 
 const dataDisplay = () => {
