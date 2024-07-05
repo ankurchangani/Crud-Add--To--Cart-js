@@ -8,7 +8,7 @@ const getCart = () => {
     if (cartData) {
         cartData = cartData.map(product => ({
             ...product,
-            quantity: product.quantity || 1 
+            quantity: product.quantity || 1
         }));
         return cartData;
     } else {
@@ -21,7 +21,7 @@ const getCart = () => {
 const viewCart = () => {
     addshow.innerHTML = "";
     let totalPrice = 0;
-    
+
     if (Cart.length > 0) {
         Cart.forEach((product) => {
             addshow.innerHTML += `<tr>
@@ -43,15 +43,15 @@ const viewCart = () => {
                                     </button>
                                     </td>
                                     </tr>`;
-                                    totalPrice += (product.quantity * product.price);
-                                });
-                                
-                                addshow.innerHTML += `<tr>
+            totalPrice += (product.quantity * product.price);
+        });
+
+        addshow.innerHTML += `<tr>
                                 <td colspan="8" class="text-end fw-bold">Total Price:</td>
                                 <td colspan="2">${calculateTotalPrice()}</td>
                                 </tr>`;
-                            } else {
-                                addshow.innerHTML = "<tr><td colspan='10' class='text-center'>Cart is Empty</td></tr>";
+    } else {
+        addshow.innerHTML = "<tr><td colspan='10' class='text-center'>Cart is Empty</td></tr>";
     }
 };
 
@@ -85,16 +85,16 @@ const decreaseQuantity = (id) => {
 
 const productdelete = (id) => {
     console.log("productdelete")
-    
+
     Cart = [...Cart];
-    
+
     let deletdeta = Cart.filter((delid) => {
         return delid.id !== id;
     });
-    
+
     localStorage.setItem("product-item", JSON.stringify(deletdeta));
     Cart = getCart();
-    
+
     viewCart();
 };
 let Cart = getCart();
@@ -106,5 +106,5 @@ const calculateTotalPrice = () => {
 };
 
 
-viewCart(); 
+viewCart();
 
